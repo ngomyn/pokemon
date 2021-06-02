@@ -1,0 +1,82 @@
+<section class="trailer">
+  <h2>Trailer</h2>
+  <div class="container-fluid" style="width: 80%">
+    <div class="container d-flex justify-content-between align-items-center">
+      <carousel
+        [objectFit]="'cover'"
+        [cellWidth]="'100%'"
+        [arrowsOutside]="true"
+        [autoplay]="true"
+        [dots]="false"
+        [loop]="true"
+      >
+        <div class="carousel-cell">
+          <iframe
+            style="width: 100%; height: 100%"
+            src="https://www.youtube.com/embed/D0zYJ1RQ-fs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="carousel-cell">
+          <iframe
+            style="width: 100%; height: 100%"
+            src="https://www.youtube.com/embed/1roy4o4tqQM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="carousel-cell">
+          <iframe
+            style="width: 100%; height: 100%"
+            src="https://www.youtube.com/embed/bILE5BEyhdo"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="carousel-cell">
+          <iframe
+            width="853"
+            height="480"
+            src="https://www.youtube.com/embed/uBYORdr_TY8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </carousel>
+    </div>
+  </div>
+</section>
+<section class="pokemon">
+  <h2>Pokemon</h2>
+  <div class="card-deck">
+    <div class="card col-sm-3" *ngFor="let item of pokeDatas">
+      <!-- hình quá bé  -->
+      <img
+        src="{{ item.sprites.front_default }}"
+        alt="pokelogo"
+        class="card-img-top"
+        width="100%"
+        (click)="navigation(item)"
+      />
+      <hr />
+      <div class="card-body">
+        <h5
+          class="card-title"
+          style="text-align: center; text-transform: uppercase"
+          (click)="navigation(item)"
+        >
+          {{ item.pokemon.name }}
+        </h5>
+      </div>
+    </div>
+  </div>
+</section>
